@@ -7,8 +7,7 @@ interface Notify {
   url: string;
 }
 export const notifyChannel = ({ service, context, env, url }: Notify) => {
-  const data = { text: `${service}::${env} - error context ${context}` };
-  axios.post(url,JSON.stringify(data)).then((data)=>{
+  axios.post(url,{text: `${service}::${env} - error context ${context}`}).then((data)=>{
       console.log({message: data?.statusText});
   }).catch((e)=>{
       console.log({error: e, logLevel: 'error'})
