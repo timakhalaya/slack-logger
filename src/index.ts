@@ -1,15 +1,11 @@
-import axios from 'axios';
+import Big from 'big.js';
 
-interface Notify {
-  service: string;
-  context: any;
-  env: string;
-  url: string;
-}
-export const notifyChannel = ({ service, context, env, url }: Notify) => {
-  axios.post(url,{text: `${service}::${env} - error context ${context}`}).then((data)=>{
-      console.log({message: data?.statusText});
-  }).catch((e)=>{
-      console.log({error: e, logLevel: 'error'})
-  })
+export const checkNestMultiplicity = (innerNest: number, outerNest: number) => {
+  const VALUE_TO_COMPARE = '0';
+  const bigInnerNest = Big(innerNest);
+  const bigOuterNest = Big(outerNest);
+
+  const remainderOfDivision = bigOuterNest.mod(bigInnerNest).valueOf();
+
+  return remainderOfDivision === VALUE_TO_COMPARE;
 };

@@ -1,7 +1,7 @@
 {
-  "name": "slack-tiny-logger",
-  "version": "1.0.12",
-  "description": "Light weight slack logger for web hooks",
+  "name": "utility-package-test",
+  "version": "1.0.13",
+  "description": "Testing big js here....",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "umd:main": "lib/umd/index.js",
@@ -23,9 +23,8 @@
     "access": "public"
   },
   "keywords": [
-    "slack",
-    "logger",
-    "minimal"
+    "utility",
+    "test"
   ],
   "files": [
     "lib/**/*"
@@ -33,9 +32,11 @@
   "author": "Timur Akhalaia",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.2.1"
+    "axios": "^1.2.1",
+    "big.js": "^6.2.1"
   },
   "devDependencies": {
+    "@types/big.js": "^6.2.0",
     "prettier": "^2.8.1",
     "ts-loader": "^9.4.2",
     "tslint": "^6.1.3",
